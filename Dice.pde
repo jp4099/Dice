@@ -8,6 +8,8 @@ void setup()
 
 void draw()
 {
+  background(0);
+  for(int x = 
   one.show();
   one.roll();
 }
@@ -33,6 +35,11 @@ class Die //models one single dice cube
   {
      mySize = 100;
      myCircle = 20;
+     
+     if(Math.random() < .2)
+     {
+
+     }
   }
   
   void show()
@@ -40,7 +47,52 @@ class Die //models one single dice cube
      fill(255,195,195);
      rect(myX,myY,mySize,mySize,7);
      fill(0,0,0);
+     one();
+  }
+  
+  void one()
+  {
      ellipse(150,150,myCircle,myCircle);
+  }
+  
+  void two()
+  {
+     ellipse(130,130,myCircle,myCircle);
+     ellipse(170,170,myCircle,myCircle);
+  }
+  
+  void three()
+  {
+     ellipse(125,125,myCircle,myCircle);
+     ellipse(150,150,myCircle,myCircle);
+     ellipse(175,175,myCircle,myCircle);
+  }
+  
+  void four()
+  {
+     ellipse(125,125,myCircle,myCircle);
+     ellipse(175,125,myCircle,myCircle);
+     ellipse(175,175,myCircle,myCircle);
+     ellipse(125,175,myCircle,myCircle);
+  }
+  
+  void five()
+  {
+     ellipse(125,125,myCircle,myCircle);
+     ellipse(175,125,myCircle,myCircle);
+     ellipse(175,175,myCircle,myCircle);
+     ellipse(150,150,myCircle,myCircle);
+     ellipse(125,175,myCircle,myCircle);
+  }
+  
+  void six()
+  {
+     ellipse(125,125,myCircle,myCircle);
+     ellipse(175,125,myCircle,myCircle);
+     ellipse(175,175,myCircle,myCircle);
+     ellipse(175,150,myCircle,myCircle);
+     ellipse(125,175,myCircle,myCircle);
+     ellipse(125,150,myCircle,myCircle);
   }
 }
 
