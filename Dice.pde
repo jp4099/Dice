@@ -1,5 +1,3 @@
-Die one = new Die(100,100);
-
 void setup()
 {
   size(300,300);
@@ -8,10 +6,13 @@ void setup()
 
 void draw()
 {
-  background(0);
-  for(int x = 
-  one.show();
-  one.roll();
+  background(255);
+   for(int y = 25; y <= 300; y+=100){
+    for(int x = 25; x <= 300; x+=100){
+      Die dice = new Die (x, y);
+      dice.show();
+    }
+   }
 }
 
 void mousePressed()
@@ -21,78 +22,76 @@ void mousePressed()
   
 class Die //models one single dice cube
 {
-  int myCircle, mySize, myX, myY;
+  int myX, myY, number;
       
   Die(int x, int y) //constructor
   {
-    myCircle = 0;
-    mySize = 0;
     myX = x;
     myY = y;
+    number = (int)(Math.random()*6)+1;
   }
   
-  void roll()
+  void roll(int number)
   {
-     mySize = 100;
-     myCircle = 20;
-     
-     if(Math.random() < .2)
-     {
-
-     }
-  }
+     if((int)(Math.random()*6)+1 == 1){
+     number= 1;
+    } else if ((int)(Math.random()*6)+1 == 2){
+     number= 2;
+    } else if ((int)(Math.random()*6)+1 == 3){
+     number= 3;
+    } else if ((int)(Math.random()*6)+1 == 4){
+     number= 4;
+    } else if ((int)(Math.random()*6)+1 == 5){
+     number= 5;
+    } else {
+     number= 6;
+    }
+}
   
   void show()
   {
-     fill(255,195,195);
-     rect(myX,myY,mySize,mySize,7);
-     fill(0,0,0);
-     one();
-  }
-  
-  void one()
-  {
-     ellipse(150,150,myCircle,myCircle);
-  }
-  
-  void two()
-  {
-     ellipse(130,130,myCircle,myCircle);
-     ellipse(170,170,myCircle,myCircle);
-  }
-  
-  void three()
-  {
-     ellipse(125,125,myCircle,myCircle);
-     ellipse(150,150,myCircle,myCircle);
-     ellipse(175,175,myCircle,myCircle);
-  }
-  
-  void four()
-  {
-     ellipse(125,125,myCircle,myCircle);
-     ellipse(175,125,myCircle,myCircle);
-     ellipse(175,175,myCircle,myCircle);
-     ellipse(125,175,myCircle,myCircle);
-  }
-  
-  void five()
-  {
-     ellipse(125,125,myCircle,myCircle);
-     ellipse(175,125,myCircle,myCircle);
-     ellipse(175,175,myCircle,myCircle);
-     ellipse(150,150,myCircle,myCircle);
-     ellipse(125,175,myCircle,myCircle);
-  }
-  
-  void six()
-  {
-     ellipse(125,125,myCircle,myCircle);
-     ellipse(175,125,myCircle,myCircle);
-     ellipse(175,175,myCircle,myCircle);
-     ellipse(175,150,myCircle,myCircle);
-     ellipse(125,175,myCircle,myCircle);
-     ellipse(125,150,myCircle,myCircle);
+    fill(255,195,195);
+    rect(myX,myY,50,50,7);
+     
+    if(number == 1){
+      fill(0);
+      ellipse(myX + 25, myY + 25, 10, 10);
+      
+    } else if (number == 2){
+      fill(0);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      
+    } else if (number == 3){
+      fill(0);
+      ellipse(myX + 25, myY + 25, 10, 10);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      
+    } else if (number == 4){
+      fill(0);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 15, 10, 10);
+      ellipse(myX + 15, myY + 35, 10, 10);
+      
+    } else if (number == 5){
+      fill(0);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 15, 10, 10);
+      ellipse(myX + 15, myY + 35, 10, 10);
+      ellipse(myX + 25, myY + 25, 10, 10);
+      
+    } else {
+      fill(0);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 15, 10, 10);
+      ellipse(myX + 15, myY + 35, 10, 10);
+      ellipse(myX + 25, myY + 15, 10, 10);
+      ellipse(myX + 25, myY + 35, 10, 10);
+    }
   }
 }
 
