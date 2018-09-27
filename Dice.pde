@@ -6,7 +6,7 @@ void setup()
 
 void draw()
 {
-  background(222);
+  background(77);
    for(int y = 25; y <= 300; y+=100){
     for(int x = 25; x <= 300; x+=100){
       Die dice = new Die (x, y);
