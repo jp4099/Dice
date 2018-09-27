@@ -1,12 +1,12 @@
 void setup()
 {
-  size(300,300);
+  size(300,400);
   noLoop();
 }
 
 void draw()
 {
-  background(255);
+  background(222);
    for(int y = 25; y <= 300; y+=100){
     for(int x = 25; x <= 300; x+=100){
       Die dice = new Die (x, y);
@@ -50,7 +50,8 @@ class Die //models one single dice cube
   
   void show()
   {
-    fill(255,195,195);
+    stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    fill(255,219,253);
     rect(myX,myY,50,50,7);
      
     if(number == 1){
@@ -85,52 +86,12 @@ class Die //models one single dice cube
       
     } else {
       fill(0);
-      ellipse(myX + 15, myY + 15, 10, 10);
-      ellipse(myX + 35, myY + 35, 10, 10);
-      ellipse(myX + 35, myY + 15, 10, 10);
-      ellipse(myX + 15, myY + 35, 10, 10);
-      ellipse(myX + 25, myY + 15, 10, 10);
-      ellipse(myX + 25, myY + 35, 10, 10);
+      ellipse(myX + 15, myY + 12, 10, 10);
+      ellipse(myX + 35, myY + 39, 10, 10);
+      ellipse(myX + 35, myY + 12, 10, 10);
+      ellipse(myX + 15, myY + 39, 10, 10);
+      ellipse(myX + 15, myY + 26, 10, 10);
+      ellipse(myX + 35, myY + 26, 10, 10);
     }
   }
 }
-
-
-/*Balloon bob = new Balloon(225,150);
-Balloon sue = new Balloon(75,150);
-
-void setup()
-{
-  size(300,300);
-}
-
-void draw()
-{
-  bob.show();
-  bob.inflate();
-  
-  sue.show();
-  sue.inflate();
-}
-
-class Balloon
-{
-  int mySize, myX, myY;
-  void inflate()
-  {
-    mySize = mySize + 1;
-  }
-  
-  Balloon(int x, int y) //constructor initialize the variables/
-  {
-    mySize = 0;
-    myX = x;
-    myY = y;
-  }
-  
-  void show()
-  {
-    fill (255,0,0);
-    ellipse (myX,myY,mySize,mySize);
-  }
-}*/
