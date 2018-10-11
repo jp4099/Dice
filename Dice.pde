@@ -1,3 +1,5 @@
+int rollnum = 0;
+
 void setup()
 {
   size(300,400);
@@ -6,6 +8,7 @@ void setup()
 
 void draw()
 {
+rollnum = 0;
   background(77);
    for(int y = 25; y <= 300; y+=100){
     for(int x = 25; x <= 300; x+=100){
@@ -35,16 +38,22 @@ class Die //models one single dice cube
   {
      if((int)(Math.random()*6)+1 == 1){
      number= 1;
+     rollnum += 1;
     } else if ((int)(Math.random()*6)+1 == 2){
      number= 2;
+     rollnum += 2;
     } else if ((int)(Math.random()*6)+1 == 3){
      number= 3;
+     rollnum += 3;
     } else if ((int)(Math.random()*6)+1 == 4){
      number= 4;
+     rollnum += 4;
     } else if ((int)(Math.random()*6)+1 == 5){
      number= 5;
+     rollnum += 5;
     } else {
      number= 6;
+     rollnum += 6;
     }
 }
   
