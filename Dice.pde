@@ -16,7 +16,8 @@ for (int y = 60; y < 470; y+=70)
     bob.show();
   }
   }
-      text("Total dice roll: " + rollnum, 150, 470);
+  textSize(40);
+  text("Total dice roll: " + rollnum, 150, 470);
 }
 void mousePressed()
 {
