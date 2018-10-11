@@ -17,7 +17,7 @@ rollnum = 0;
     }
    }
    textSize(20);
-   text("Total Dice Roll: " + rollnum, 60 350);
+   text("Total Dice Roll: " + rollnum, 60, 350);
 }
 
 void mousePressed()
